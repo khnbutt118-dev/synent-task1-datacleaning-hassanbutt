@@ -1,0 +1,31 @@
+{
+  "dataset_shape": [
+    891,
+    12
+  ],
+  "missing_before": {
+    "Age": 177,
+    "Cabin": 687,
+    "Embarked": 2
+  },
+  "duplicates_before": 0,
+  "duplicates_removed": 0,
+  "missing_after": 0,
+  "rows_clean": 891,
+  "dtypes": {
+    "passenger_id": "int64",
+    "survived": "int64",
+    "passenger_class": "category",
+    "name": "str",
+    "sex": "category",
+    "age": "float64",
+    "siblings_spouses": "int64",
+    "parents_children": "int64",
+    "ticket": "str",
+    "fare": "float64",
+    "port_embarked": "category",
+    "has_cabin": "int64",
+    "deck": "category",
+    "title": "category"
+  }
+}
