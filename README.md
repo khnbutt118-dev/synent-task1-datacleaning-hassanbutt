@@ -1,62 +1,49 @@
-<p align="center"><img src="https://raw.githubusercontent.com/khnbutt118-dev/khnbutt118-dev/main/assets/medical-ai-banner.svg" alt="Hassan Butt — Pharmacy meets Artificial Intelligence" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/khnbutt118-dev/khnbutt118-dev/main/assets/medical-ai-banner.svg" width="100%" alt="Hassan Butt — Pharmacy meets Artificial Intelligence"></p>
+<p align="center"><img src="https://img.shields.io/badge/SYNENT-Task%2001-087EAD?style=for-the-badge"><img src="https://img.shields.io/badge/Focus-Data%20Quality-155E9A?style=for-the-badge"><img src="https://img.shields.io/badge/Level-Basic-0B719E?style=for-the-badge"></p>
+<p align="center"><a href="https://github.com/khnbutt118-dev">← Profile</a> · <a href="https://hassanbuttportfolio.vercel.app/">Portfolio</a> · <a href="https://www.linkedin.com/in/hassan-butt-ab0036334/">LinkedIn</a></p>
 
-<p align="center"><a href="https://github.com/khnbutt118-dev">← Back to GitHub profile</a> · <a href="https://hassanbuttportfolio.vercel.app/">Portfolio</a> · <a href="https://www.linkedin.com/in/hassan-butt-ab0036334/">LinkedIn</a></p>
+# 🧹 Titanic · Data Cleaning & Preprocessing
+**Synent Technologies · Data Science Internship · Task 1**
 
----
+<table><tr><td align="center"><h2>891</h2><sub>Rows retained</sub></td><td align="center"><h2>866 → 0</h2><sub>Missing cells</sub></td><td align="center"><h2>0</h2><sub>Duplicate rows removed</sub></td></tr></table>
 
-# Data Cleaning & Preprocessing (Titanic)
+## The transformation
 
-> Synent Technologies Data Science Internship | Task 1 (Basic level) | Author: Hassan Butt
+| Data quality check | Before | After |
+|:--|--:|--:|
+| Rows | 891 | 891 |
+| Missing cells | 866 | **0** |
+| Duplicate rows removed | — | 0 |
 
-## Problem statement
-Raw data is rarely analysis-ready. This project cleans the Titanic passenger dataset so it can be analysed reliably.
+## 🛠️ What changed
 
-## Dataset details
-- **Dataset:** Titanic passenger dataset
-- **Source:** https://www.kaggle.com/datasets/yasserh/titanic-dataset
-- **Size used:** 891 rows x 12 columns
+- Standardised column names to snake_case.
+- Removed duplicate rows and duplicate passenger IDs (none were present).
+- Imputed Age using median by passenger class and sex; Embarked using mode.
+- Converted Cabin into `has_cabin` and `deck` features rather than imputing a column with 77% missing values.
+- Corrected data types and generated a before/after quality report.
 
-## Approach
-1. Renamed columns to consistent snake_case names
-2. Removed duplicate rows and duplicate passenger IDs
-3. Handled missing values: Age (median by class and sex), Embarked (mode), Cabin (converted to has_cabin and deck features)
-4. Converted data types (categories for class, sex, port, deck; integers for counts; floats for age and fare)
-5. Created a before/after data-quality report and quick survival checks on the cleaned data
+## 📈 Visual results
 
-## Results
-| Metric | Value |
-|---|---|
-| Rows (raw -> clean) | 891 -> 891 |
-| Missing cells (before -> after) | 866 -> 0 |
-| Duplicates removed | 0 |
+<p align="center"><img src="outputs/missing_values_and_age.png" alt="Missing values and age analysis" width="80%"></p>
+<p align="center"><img src="outputs/survival_after_cleaning.png" alt="Survival analysis after cleaning" width="80%"></p>
 
-**Key insights**
+**Exploratory observation:** survival in this dataset was 74% for women and 19% for men. This is a descriptive result for this dataset, not a causal conclusion.
 
-- Cabin was 77% missing, so it was converted into 'has_cabin' and 'deck' features instead of being imputed.
-- Age was 20% missing and was filled with the median age of passengers in the same class and sex group.
-- 0 duplicate rows were removed and all 866 missing cells were handled (0 left).
-- After cleaning, survival was 74% for women vs 19% for men.
+## ▶️ Run
 
-**Figures**
-
-![missing_values_and_age.png](outputs/missing_values_and_age.png)
-![survival_after_cleaning.png](outputs/survival_after_cleaning.png)
-
-**Other output files:** `titanic_clean.csv`, `data_quality_report.json`
-
-## How to run
 ```bash
 pip install -r requirements.txt
 python main.py
 ```
 
-## Project structure
-```
-main.py            # full analysis / pipeline
-requirements.txt
-data/              # dataset (see data/README.md)
-outputs/           # figures, tables and reports
-```
+<details><summary><b>Dataset & files</b></summary>
 
-## Academic integrity
-All analysis code and write-ups in this repository were written by the author. The dataset belongs to its original creators (see link above).
+- Dataset: [Titanic passenger dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
+- 891 rows × 12 columns
+- Outputs: `titanic_clean.csv`, `data_quality_report.json`
+- Main files: `main.py`, `requirements.txt`, `outputs/`
+</details>
+
+---
+<p align="center"><sub>Clean data is the foundation of reliable analysis.</sub></p>
